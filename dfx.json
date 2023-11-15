@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "deneme_backend": {
+      "candid": "src/deneme_backend/deneme_backend.did",
+      "package": "deneme_backend",
+      "type": "rust"
+    },
+    "deneme_frontend": {
+      "dependencies": [
+        "deneme_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/deneme_frontend/src/index.html"
+      },
+      "source": [
+        "src/deneme_frontend/assets",
+        "dist/deneme_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

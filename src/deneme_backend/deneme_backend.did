@@ -1,0 +1,49 @@
+type Patient = record {
+    ssn: nat32;
+    name: text;
+    age: text;
+    weight: text;
+    height: text;
+    blood_type: text;
+    illness_records: vec IllnessRecords;
+    prescription_records: vec PrescriptionRecords;
+    allergy_records: vec AllergyRecords;
+    past_treatment_records: vec PastTreatmentRecords;
+    xray_records: vec XrayRecords;
+};
+
+type IllnessRecords = record {
+    illness_name: text;
+    illness_date: text;
+    illness_description: text;
+};
+
+type PrescriptionRecords = record {
+    prescription_name: text;
+    prescription_date: text;
+    prescription_description: text;
+};
+
+type AllergyRecords = record {
+    allergy_name: text;
+    allergy_date: text;
+    allergy_description: text;
+};
+
+type PastTreatmentRecords = record {
+    past_treatment_name: text;
+    past_treatment_date: text;
+    past_treatment_description: text;
+};
+
+type XrayRecords = record {
+    xray_name: text;
+    xray_date: text;
+    xray_description: text;
+};
+
+
+service : {
+    "add_patient": (Patient) -> ();
+    "get_patient_by_ssn": (nat32) -> (opt Patient) query;
+};
